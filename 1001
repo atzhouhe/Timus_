@@ -1,0 +1,40 @@
+/*
+1001：
+1、从输入流中读取数据（以任意的空格和换行符分割），
+2、将读取到的数据按照读取序号，从大到小取平方根输出，
+3、输出格式；保留小数点后四位
+
+http://www.runoob.com/regexp/regexp-syntax.html 正则表达式
+*/
+namespace Judge1001
+{
+    
+    class Excute
+    {
+        static void Main(string[] args)
+        {
+            string input = Console.ReadLine();
+            string[] inputnum = input.Split();
+            foreach (string i in inputnum)
+                Console.WriteLine(i.ToString());
+            Console.ReadLine();
+        }
+    }
+}
+
+using System;
+namespace Judge1001
+{
+    class Program
+    {
+        static void Main(string[] args)
+        { 
+            string[] s = Console.In.ReadToEnd().Split(new char[] {'','\n','\r','\t'}.StringSplitOptions.RemoveEmptyEntries); 
+
+            for(int i = s.Length - 1; i >= 0; i--)
+            { 
+                Console.WriteLine("{0：0.0000}",Math.Sqrt(double.Parse(s[i]))); 
+            } 
+        } 
+    } 
+}
